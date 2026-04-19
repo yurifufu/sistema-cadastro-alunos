@@ -1,43 +1,43 @@
-main{
-  min-height: 100vh;
+main {
+  min-height: 70vh;
   display: flex;
   justify-content: center;
-  margin-top: 32px; 
+  margin: 0;
   background-color: rgb(240, 212, 216);
-  zoom: 125%;
+  zoom: 120%;
 }
 
 body * {
-  font-family:'Times New Roman', Times, serif; 
+  font-family: 'Times New Roman', Times, serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-#container{
-    background-color: pink;
-    border-radius: 36px;
-    padding: 16px;   
-    margin: auto;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.589);
+#container {
+  background-color: pink;
+  border-radius: 36px;
+  padding: 16px;
+  margin: auto;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.589);
 }
 
-h1{
-    padding: 24px;
-    color: palevioletred
+h1 {
+  padding: 8px;
+  color: palevioletred
 }
 
 .form-control {
-    gap:4px;
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 16px;
-    border-radius: 30px;
+  gap: 4px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+  border-radius: 30px;
 }
 
-.erro{
-    color: red;
-    font-size: 0.8rem;
+.erro {
+  color: red;
+  font-size: 0.8rem;
 }
 
 .sucesso {
@@ -47,23 +47,55 @@ h1{
 }
 
 button {
-    background-color: palevioletred;
-    color: white;
-    border: none;
-    display: block;
-    margin: auto;
-    padding: 12px 24px;
-    font-size: 16px;
-    font-weight: bold;
-    border-radius: 12px; 
-    cursor: pointer;
-    transition: all 0.3s ease; 
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+  background-color: palevioletred;
+  color: white;
+  border: none;
+  display: block;
+  margin: auto;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-button:hover{
-    background-color: darkmagenta;
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
-    transform: translateY(-2px);
+.alinhamento {
+  display: flex;
+  justify-content: flex-end;
+  padding: 5px;
 }
-    
+
+.buttongerenciamento {
+  background-color: white;
+  color: palevioletred;
+  border: none;
+  display: block;
+  padding: 10px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: auto;
+}
+
+button:hover {
+  background-color: darkmagenta;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.tablealunos{
+  background-color: white; 
+}
+
+.listagem{
+  background-color: darksalmon;
+    font-family: 'Times New Roman', Times, serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
