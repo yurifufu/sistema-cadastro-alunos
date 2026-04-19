@@ -1,23 +1,61 @@
-// 1. Pegamos a string da "gaveta"
-const dadosSalvos = localStorage.getItem('listaAlunos');
+// Carrega e exibe os alunos na tabela, com botão de remover por linha
 
-// 2. Transformamos a string de volta em um Array de objetos (JSON.parse)
-// Se não houver nada, usamos um array vazio []
-const listaAlunos = dadosSalvos ? JSON.parse(dadosSalvos) : [];
+function carregarTabela() {
+    const listaSalva = localStorage.getItem('listaAlunos');
+    const alunos = listaSalva ? JSON.parse(listaSalva) : [];
 
-// 3. Selecionamos o corpo da tabela onde os dados vao entrar
-const corpoTabela = document.querySelector('#tabela-alunos tbody');
+    const corpoTabela = document.querySelector('#tabela-alunos tbody');
+    corpoTabela.innerHTML = ''; // Limpa antes de redesenhar
 
-// 4. Percorremos a lista de alunos e criamos as linhas (HTML)
-listaAlunos.forEach(aluno => {
-    const linha = document.createElement('tr');
+    const avisoVazio = document.getElementById('sem-alunos');
 
-    linha.innerHTML = `
-        <td>${aluno.nome}</td>
-        <td>${aluno.matricula}</td>
-        <td>${aluno.email}</td>
-        <td>${aluno.turma}</td>
-    `;
+    if (alunos.length === 0) {
+        if (avisoVazio) avisoVazio.hidden = false;
+        return;
+    }
 
-    corpoTabela.appendChild(linha);
-});
+    if (avisoVazio) avisoVazio.hidden = true;
+
+    alunos.forEach((aluno, indice) => {
+        const linha = document.createElement('tr');
+
+        linha.innerHTML = `
+            <td>${aluno.nome}</td>
+            <td>${aluno.matricula}</td>
+            <td>${aluno.email}</td>
+            <td>${aluno.turma}</td>
+            <td>
+                <button class="btn-remover" data-indice="${indice}">Remover</button>
+            </td>
+        `;
+
+        corpoTabela.appendChild(linha);
+    });
+
+    // Adiciona o evento de remover em cada botão da tabela
+    corpoTabela.querySelectorAll('.btn-remover').forEach(btn => {
+        btn.addEventListener('click', function () {
+            const i = parseInt(this.dataset.indice);
+            removerAluno(i);
+        });
+    });
+}
+
+// Remove o aluno pelo índice e recarrega tudo
+function removerAluno(indice) {
+    const listaSalva = localStorage.getItem('listaAlunos');
+    const alunos = listaSalva ? JSON.parse(listaSalva) : [];
+
+    alunos.splice(indice, 1);
+    localStorage.setItem('listaAlunos', JSON.stringify(alunos));
+
+    carregarTabela();
+
+    // Também atualiza o select de exclusão, se existir na página
+    if (typeof preencherSelect === 'function') {
+        preencherSelect();
+    }
+}
+
+// Roda ao carregar a página
+carregarTabela();
