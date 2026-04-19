@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciamento de Cadastros</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<main body>
+    <div id="container">
+        <h1>Alunos Cadastrados</h1>
+        <table border="1" id="tabela-alunos" class="tablealunos">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Matrícula</th>
+                    <th>E-mail</th>
+                    <th>Turma</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <script src="exibir.js"></script>
+
+    <div id="container">
+        <h4>Exclusão de Alunos</h4>
+        <select id="lista-exclusao" class="tablealunos" required>
+            <option value="">Selecione um aluno</option>
+        </select>
+        <button type="submit" class="btn-cadastrar" >Excluir</button>
+    </div>
+
+    <script src="listagemmatricula.js"></script>
+</main>
+
+</body>
+
+
+
+<body>
+    <div class="alinhamento">
+        <a href="index.html" type="submit" class="buttongerenciamento">Voltar para o cadastro</a>
+    </div>
+</body>
+
+
+</html>
