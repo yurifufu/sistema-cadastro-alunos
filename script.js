@@ -1,6 +1,6 @@
 const form = document.getElementById('form-aluno')
 
-form.addEventListener('submit', function(e) {
+form.addEventListener('submit', function (e) {
     e.preventDefault()
     console.log('formulário enviado!')
 
@@ -8,6 +8,13 @@ form.addEventListener('submit', function(e) {
     const matricula = document.getElementById('matricula').value
     const email = document.getElementById('email').value
     const turma = document.getElementById('turma').value
+
+    const alunos = {
+        nome: nome,
+        matricula: matricula,
+        email: email,
+        turma: turma
+    };
 
     let valido = true
 
@@ -46,8 +53,18 @@ form.addEventListener('submit', function(e) {
     }
 
     if (valido == true) {
-        console.log('tudo certo, cadastrando aluno...')
-        document.getElementById('mensagem-sucesso').hidden = false
-        form.reset()
+        let listaNoNavegador = localStorage.getItem('listaAlunos');
+        let alunosCadastrados = listaNoNavegador ? JSON.parse(listaNoNavegador) : [];
+
+
+        alunosCadastrados.push(alunos);
+
+
+        localStorage.setItem('listaAlunos', JSON.stringify(alunosCadastrados));
+
+
+        console.log('Aluno salvo com sucesso!');
+        document.getElementById('mensagem-sucesso').hidden = false;
+        form.reset();
     }
 })
