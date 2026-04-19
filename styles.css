@@ -1,101 +1,277 @@
-main {
-  min-height: 70vh;
-  display: flex;
-  justify-content: center;
-  margin: 0;
-  background-color: rgb(240, 212, 216);
-  zoom: 120%;
+:root {
+  --rosa:        #c2185b;
+  --rosa-claro:  #f48fb1;
+  --rosa-fundo:  #fce4ec;
+  --rosa-hover:  #880e4f;
+  --branco:      #ffffff;
+  --cinza-claro: #f5f5f5;
+  --cinza-borda: #e0e0e0;
+  --texto:       #3e2723;
+  --erro:        #c62828;
+  --erro-fundo:  #ffebee;
+  --sucesso:     #2e7d32;
+  --sucesso-fundo: #e8f5e9;
+  --aviso-fundo: #fff8e1;
+  --aviso:       #e65100;
+  --sombra:      0 2px 12px rgba(0,0,0,0.10);
 }
 
-body * {
-  font-family: 'Times New Roman', Times, serif;
+* {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+body {
+  background-color: var(--rosa-fundo);
+  color: var(--texto);
+  min-height: 100vh;
+}
+
+.topo {
+  background-color: var(--rosa);
+  color: var(--branco);
+  padding: 14px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: var(--sombra);
+}
+
+.logo {
+  font-size: 1.1rem;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}
+
+.btn-link {
+  background-color: rgba(255,255,255,0.15);
+  color: var(--branco);
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  transition: background 0.2s;
+}
+
+.btn-link:hover {
+  background-color: rgba(255,255,255,0.30);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 32px 16px;
+}
+
 #container {
-  background-color: pink;
-  border-radius: 36px;
-  padding: 16px;
-  margin: auto;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.589);
+  background-color: var(--branco);
+  border-radius: 16px;
+  padding: 28px 32px;
+  width: 100%;
+  max-width: 560px;
+  box-shadow: var(--sombra);
 }
 
 h1 {
-  padding: 8px;
-  color: palevioletred
+  font-size: 1.5rem;
+  color: var(--rosa);
+  margin-bottom: 24px;
+  border-bottom: 2px solid var(--rosa-fundo);
+  padding-bottom: 10px;
+}
+
+h2 {
+  font-size: 1.1rem;
+  color: var(--rosa);
+  margin-bottom: 16px;
 }
 
 .form-control {
-  gap: 4px;
   display: flex;
   flex-direction: column;
-  margin-bottom: 16px;
-  border-radius: 30px;
+  margin-bottom: 18px;
 }
 
-.erro {
-  color: red;
-  font-size: 0.8rem;
+label {
+  font-size: 0.88rem;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: var(--texto);
+}
+
+input,
+select {
+  border: 1.5px solid var(--cinza-borda);
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 0.95rem;
+  color: var(--texto);
+  background: var(--cinza-claro);
+  transition: border-color 0.2s, background 0.2s;
+  outline: none;
+}
+
+input:focus,
+select:focus {
+  border-color: var(--rosa);
+  background: var(--branco);
+}
+
+.form-control.invalido input,
+.form-control.invalido select {
+  border-color: var(--erro);
+  background-color: var(--erro-fundo);
+}
+
+.form-control.valido input,
+.form-control.valido select {
+  border-color: var(--sucesso);
+}
+
+small.erro {
+  color: var(--erro);
+  font-size: 0.78rem;
+  margin-top: 4px;
+  min-height: 16px;
+}
+
+.btn-primario {
+  background-color: var(--rosa);
+  color: var(--branco);
+  border: none;
+  display: block;
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.btn-primario:hover {
+  background-color: var(--rosa-hover);
+  transform: translateY(-1px);
+}
+
+.btn-primario:active {
+  transform: translateY(0);
+}
+
+.btn-perigo {
+  background-color: var(--erro);
+  color: var(--branco);
+  border: none;
+  padding: 10px 20px;
+  font-size: 0.95rem;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.2s;
+  white-space: nowrap;
+}
+
+.btn-perigo:hover {
+  background-color: #8b0000;
+}
+
+.mensagem {
+  margin-top: 14px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
 }
 
 .sucesso {
-  color: green;
-  margin-top: 12px;
-  text-align: center;
+  background-color: var(--sucesso-fundo);
+  color: var(--sucesso);
+  border: 1px solid #a5d6a7;
 }
 
-button {
-  background-color: palevioletred;
-  color: white;
-  border: none;
-  display: block;
-  margin: auto;
-  padding: 12px 24px;
-  font-size: 16px;
-  font-weight: bold;
-  border-radius: 12px;
+.erro-msg {
+  background-color: var(--erro-fundo);
+  color: var(--erro);
+  border: 1px solid #ef9a9a;
+}
+
+.aviso {
+  background-color: var(--aviso-fundo);
+  color: var(--aviso);
+  border: 1px solid #ffcc02;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 0.9rem;
+  margin-bottom: 12px;
+}
+
+.tabela-wrapper {
+  overflow-x: auto;
+  border-radius: 10px;
+  border: 1px solid var(--cinza-borda);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+thead tr {
+  background-color: var(--rosa);
+  color: var(--branco);
+}
+
+th {
+  padding: 10px 12px;
+  text-align: left;
+  font-weight: 600;
+}
+
+td {
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--cinza-borda);
+}
+
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+tbody tr:hover {
+  background-color: var(--rosa-fundo);
+}
+
+.btn-remover {
+  background: none;
+  border: 1px solid var(--erro);
+  color: var(--erro);
+  padding: 4px 10px;
+  border-radius: 6px;
   cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-size: 0.8rem;
+  transition: background 0.2s, color 0.2s;
 }
 
-.alinhamento {
+.btn-remover:hover {
+  background-color: var(--erro);
+  color: var(--branco);
+  transform: none;
+}
+
+.linha-exclusao {
   display: flex;
-  justify-content: flex-end;
-  padding: 5px;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
-.buttongerenciamento {
-  background-color: white;
-  color: palevioletred;
-  border: none;
-  display: block;
-  padding: 10px 24px;
-  font-size: 16px;
-  font-weight: bold;
-  border-radius: 12px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  margin: auto;
+.linha-exclusao select {
+  flex: 1;
+  min-width: 200px;
 }
 
-button:hover {
-  background-color: darkmagenta;
-  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
-  transform: translateY(-2px);
-}
-
-.tablealunos{
-  background-color: white; 
-}
-
-.listagem{
-  background-color: darksalmon;
-    font-family: 'Times New Roman', Times, serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
