@@ -1,104 +1,60 @@
 <!DOCTYPE html>
-
 <html lang="pt-BR">
-
 <head>
-
   <meta charset="UTF-8">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cadastro de Alunos</title>
-
   <link rel="stylesheet" href="styles.css">
-
 </head>
-
-
-
-<main body>
-
-  <div id="container">
-
-    <h1>Cadastro de Alunos</h1>
-
-
-
-    <form id="form-aluno" novalidate>
-
-      <div class="form-control">
-
-        <label for="nome">Nome completo</label>
-
-        <input type="text" id="nome" name="nome" placeholder="Digite o nome do aluno" required>
-
-        <small class="erro"></small>
-
-      </div>
-
-
-
-      <div class="form-control">
-
-        <label for="matricula">Matrícula</label>
-
-        <input type="text" id="matricula" name="matricula" placeholder="Ex: 2026001" required>
-
-        <small class="erro"></small>
-
-      </div>
-
-
-
-      <div class="form-control">
-
-        <label for="email">E-mail</label>
-
-        <input type="email" id="email" name="email" placeholder="exemplo@escola.edu.br" required>
-
-        <small class="erro"></small>
-
-      </div>
-
-
-
-      <div class="form-control">
-
-        <label for="turma">Turma</label>
-
-        <select id="turma" name="turma" required>
-
-          <option value="">Selecione</option>
-
-          <option value="1A">1º Ano A</option>
-
-          <option value="1B">1º Ano B</option>
-
-          <option value="2A">2º Ano A</option>
-
-        </select>
-
-        <small class="erro"></small>
-
-      </div>
-
-      <button type="submit" class="btn-cadastrar">Cadastrar</button>
-
-    </form>
-
-    <p id="mensagem-sucesso" class="sucesso" hidden>Aluno cadastrado com sucesso!</p>
-
-  </div>
-</main>
-
-
-
-<script src="script.js"></script>
-
-</body>
-
 <body>
-  <div class="alinhamento">
-    <a href="gerenciamento.html" type="submit" class="buttongerenciamento">Gerenciar</a>
-  </div>
-</body>
+  <header class="topo">
+    <span class="logo">📚 Sistema de Alunos</span>
+    <a href="gerenciamento.html" class="btn-link">Gerenciar Alunos →</a>
+  </header>
 
+  <main>
+    <div id="container">
+      <h1>Cadastro de Alunos</h1>
+
+      <form id="form-aluno" novalidate>
+
+        <div class="form-control">
+          <label for="nome">Nome completo</label>
+          <input type="text" id="nome" name="nome" placeholder="Digite o nome do aluno" required>
+          <small class="erro"></small>
+        </div>
+
+        <div class="form-control">
+          <label for="matricula">Matrícula</label>
+          <input type="text" id="matricula" name="matricula" placeholder="Ex: 2026001" required>
+          <small class="erro"></small>
+        </div>
+
+        <div class="form-control">
+          <label for="email">E-mail</label>
+          <input type="email" id="email" name="email" placeholder="exemplo@escola.edu.br" required>
+          <small class="erro"></small>
+        </div>
+
+        <div class="form-control">
+          <label for="turma">Turma</label>
+          <select id="turma" name="turma" required>
+            <option value="">Selecione</option>
+            <option value="1A">1º Ano A</option>
+            <option value="1B">1º Ano B</option>
+            <option value="2A">2º Ano A</option>
+          </select>
+          <small class="erro"></small>
+        </div>
+
+        <button type="submit" class="btn-primario">Cadastrar</button>
+      </form>
+
+      <p id="mensagem-sucesso" class="mensagem sucesso" hidden>✅ Aluno cadastrado com sucesso!</p>
+      <p id="mensagem-duplicada" class="mensagem erro-msg" hidden>⚠️ Já existe um aluno com essa matrícula.</p>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
 </html>
