@@ -1,51 +1,52 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gerenciamento de Cadastros</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gerenciamento de Alunos</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
-<main body>
-    <div id="container">
-        <h1>Alunos Cadastrados</h1>
-        <table border="1" id="tabela-alunos" class="tablealunos">
-            <thead>
-                <tr>
-                    <th>Nome</th>
-                    <th>Matrícula</th>
-                    <th>E-mail</th>
-                    <th>Turma</th>
-                </tr>
-            </thead>
-            <tbody></tbody>
-        </table>
-    </div>
-
-    <script src="exibir.js"></script>
-
-    <div id="container">
-        <h4>Exclusão de Alunos</h4>
-        <select id="lista-exclusao" class="tablealunos" required>
-            <option value="">Selecione um aluno</option>
-        </select>
-        <button type="submit" class="btn-cadastrar" >Excluir</button>
-    </div>
-
-    <script src="listagemmatricula.js"></script>
-</main>
-
-</body>
-
-
-
 <body>
-    <div class="alinhamento">
-        <a href="index.html" type="submit" class="buttongerenciamento">Voltar para o cadastro</a>
+  <header class="topo">
+    <span class="logo">📚 Sistema de Alunos</span>
+    <a href="index.html" class="btn-link">← Voltar ao Cadastro</a>
+  </header>
+
+  <main>
+    <div id="container">
+      <h1>Alunos Cadastrados</h1>
+
+      <p id="sem-alunos" class="aviso" hidden>Nenhum aluno cadastrado ainda.</p>
+
+      <div class="tabela-wrapper">
+        <table id="tabela-alunos">
+          <thead>
+            <tr>
+              <th>Nome</th>
+              <th>Matrícula</th>
+              <th>E-mail</th>
+              <th>Turma</th>
+              <th>Ação</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
     </div>
+
+    <div id="container" style="margin-top: 24px;">
+      <h2>Excluir Aluno</h2>
+      <div class="linha-exclusao">
+        <select id="lista-exclusao" required>
+          <option value="">Selecione um aluno pela matrícula</option>
+        </select>
+        <button id="btn-excluir" class="btn-perigo">Excluir</button>
+      </div>
+      <p id="mensagem-exclusao" class="mensagem" hidden></p>
+    </div>
+  </main>
+
+  <script src="exibir.js"></script>
+  <script src="listagemmatricula.js"></script>
 </body>
-
-
 </html>
