@@ -71,28 +71,28 @@ O sistema é composto por duas páginas:
 
 O cadastro será aceito quando:
 
-- [ ] Impedir o envio do formulário com qualquer campo em branco, exibindo mensagem de erro no campo correspondente
-- [ ] Impedir matrícula com menos de 6 ou mais de 10 dígitos numéricos
-- [ ] Impedir matrícula já existente no sistema com mensagem de erro visível
-- [ ] Exibir mensagem de sucesso verde ao concluir o cadastro com dados válidos
-- [ ] Limpar o formulário após o cadastro bem-sucedido
+Impedir o envio do formulário com qualquer campo em branco, exibindo mensagem de erro no campo correspondente
+Impedir matrícula com menos de 6 ou mais de 10 dígitos numéricos
+Impedir matrícula já existente no sistema com mensagem de erro visível
+Exibir mensagem de sucesso verde ao concluir o cadastro com dados válidos
+Limpar o formulário após o cadastro bem-sucedido
 
 ### 4.2 Listagem de Alunos
 
 A listagem será aceita quando:
 
-- [ ] Exibir todos os alunos cadastrados no `localStorage` ao abrir a página de gerenciamento
-- [ ] Exibir mensagem `Nenhum aluno cadastrado` quando a lista estiver vazia
-- [ ] Atualizar a tabela imediatamente após uma remoção, sem recarregar a página
+Exibir todos os alunos cadastrados no `localStorage` ao abrir a página de gerenciamento
+Exibir mensagem `Nenhum aluno cadastrado` quando a lista estiver vazia
+Atualizar a tabela imediatamente após uma remoção, sem recarregar a página
 
 ### 4.3 Remoção de Aluno
 
 A remoção será aceita quando:
 
-- [ ] O botão **Remover** em cada linha da tabela excluir corretamente o aluno correspondente
-- [ ] O `<select>` de exclusão por matrícula remover o aluno selecionado ao clicar no botão **Excluir**
-- [ ] Exibir mensagem de erro se o botão **Excluir** for clicado sem seleção no `<select>`
-- [ ] Exibir confirmação de sucesso após remoção bem-sucedida
+O botão **Remover** em cada linha da tabela excluir corretamente o aluno correspondente
+O `<select>` de exclusão por matrícula remover o aluno selecionado ao clicar no botão **Excluir**
+Exibir mensagem de erro se o botão **Excluir** for clicado sem seleção no `<select>`
+Exibir confirmação de sucesso após remoção bem-sucedida
 
 ---
 
@@ -128,9 +128,3 @@ sistema-cadastro-alunos/
 | `script.js` | Lógica do formulário: validação, verificação de duplicatas e salvamento no `localStorage` |
 | `exibir.js` | Carrega e renderiza a tabela de alunos; gerencia remoção por linha |
 | `listagemmatricula.js` | Preenche o `<select>` de exclusão; gerencia remoção pelo select + botão |
-
----
-
-## Repositório
-
-🔗 [https://github.com/yurifufu/sistema-cadastro-alunos](https://github.com/yurifufu/sistema-cadastro-alunos)
