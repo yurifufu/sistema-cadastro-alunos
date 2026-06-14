@@ -117,7 +117,7 @@ sistema-cadastro-alunos/
 ├── styles.css              # Estilos globais: layout, cores, formulário, tabela e responsividade
 ├── script.js               # Lógica do formulário: validação, verificação de duplicatas e salvamento
 ├── exibir.js               # Carrega e renderiza a tabela; gerencia remoção por linha
-└── listagemmatricula.js    # Preenche o select de exclusão; gerencia remoção pelo select + botão
+└── listamatricula.js       # Preenche o select de exclusão; gerencia remoção pelo select + botão
 ```
 
 | Arquivo | Responsabilidade |
@@ -127,4 +127,4 @@ sistema-cadastro-alunos/
 | `styles.css` | Estilos globais: layout, cores, formulário, tabela e responsividade |
 | `script.js` | Lógica do formulário: validação, verificação de duplicatas e salvamento no `localStorage` |
 | `exibir.js` | Carrega e renderiza a tabela de alunos; gerencia remoção por linha |
-| `listagemmatricula.js` | Preenche o `<select>` de exclusão; gerencia remoção pelo select + botão |
+| `listamatricula.js` | Preenche o `<select>` de exclusão; gerencia remoção pelo select + botão |
