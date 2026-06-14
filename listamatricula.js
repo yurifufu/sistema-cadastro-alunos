@@ -33,6 +33,16 @@ if (btnExcluir) {
 
         const listaSalva = localStorage.getItem('listaAlunos');
         let alunos = listaSalva ? JSON.parse(listaSalva) : [];
+        const alunoSelecionado = alunos.find(a => a.matricula === matriculaSelecionada);
+
+        if (!alunoSelecionado) {
+            exibirMensagemExclusao('Aluno selecionado nÃ£o foi encontrado.', 'erro-msg');
+            preencherSelect();
+            return;
+        }
+
+        const confirmou = confirm(`Deseja remover o aluno ${alunoSelecionado.nome} (${alunoSelecionado.matricula})?`);
+        if (!confirmou) return;
 
         alunos = alunos.filter(a => a.matricula !== matriculaSelecionada);
         localStorage.setItem('listaAlunos', JSON.stringify(alunos));

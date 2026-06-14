@@ -45,6 +45,12 @@ function carregarTabela() {
 function removerAluno(indice) {
     const listaSalva = localStorage.getItem('listaAlunos');
     const alunos = listaSalva ? JSON.parse(listaSalva) : [];
+    const aluno = alunos[indice];
+
+    if (!aluno) return;
+
+    const confirmou = confirm(`Deseja remover o aluno ${aluno.nome} (${aluno.matricula})?`);
+    if (!confirmou) return;
 
     alunos.splice(indice, 1);
     localStorage.setItem('listaAlunos', JSON.stringify(alunos));
