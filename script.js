@@ -43,7 +43,7 @@ form.addEventListener('submit', function (e) {
     if (email === '') {
         mostrarErro('email', 'E-mail é obrigatório.');
         valido = false;
-    } else if (!email.includes('@')) {
+    } else if (!validarEmail(email)) {
         mostrarErro('email', 'Informe um e-mail válido.');
         valido = false;
     } else {
@@ -95,4 +95,8 @@ function limparErro(campoId) {
     controle.classList.remove('invalido');
     controle.classList.add('valido');
     controle.querySelector('.erro').textContent = '';
+}
+
+function validarEmail(email) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email);
 }
