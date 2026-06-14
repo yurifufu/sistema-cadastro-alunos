@@ -216,6 +216,9 @@ small.erro {
 
 .tabela-wrapper {
   overflow-x: auto;
+  overflow-y: auto;
+  max-height: 350px;
+
   border-radius: 10px;
   border: 1px solid var(--cinza-borda);
 }
