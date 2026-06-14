@@ -4,6 +4,12 @@ function carregarTabela() {
     const listaSalva = localStorage.getItem('listaAlunos');
     const alunos = listaSalva ? JSON.parse(listaSalva) : [];
 
+    const campoBusca = document.getElementById('campo-busca');
+
+    const termoBusca = campoBusca
+        ? campoBusca.value.toLowerCase().trim()
+        : '';
+
     const corpoTabela = document.querySelector('#tabela-alunos tbody');
     corpoTabela.innerHTML = ''; // Limpa antes de redesenhar
 
@@ -16,7 +22,12 @@ function carregarTabela() {
 
     if (avisoVazio) avisoVazio.hidden = true;
 
-    alunos.forEach((aluno, indice) => {
+    alunos
+    .filter(aluno =>
+        aluno.nome.toLowerCase().includes(termoBusca) ||
+        aluno.matricula.includes(termoBusca)
+    )
+    .forEach((aluno, indice) => {
         const linha = document.createElement('tr');
 
         linha.innerHTML = `
@@ -65,3 +76,9 @@ function removerAluno(indice) {
 
 // Roda ao carregar a página
 carregarTabela();
+
+const campoBusca = document.getElementById('campo-busca');
+
+if (campoBusca) {
+    campoBusca.addEventListener('input', carregarTabela);
+}

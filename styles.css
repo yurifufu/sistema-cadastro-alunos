@@ -282,3 +282,11 @@ tbody tr:hover {
   min-width: 200px;
 }
 
+.busca-container {
+  margin-bottom: 16px;
+}
+
+#campo-busca {
+  width: 100%;
+}
+
