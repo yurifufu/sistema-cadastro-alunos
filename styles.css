@@ -67,13 +67,17 @@ main {
   padding: 32px 16px;
 }
 
-#container {
+.container {
   background-color: var(--branco);
   border-radius: 16px;
   padding: 28px 32px;
   width: 100%;
   max-width: 560px;
   box-shadow: var(--sombra);
+}
+
+.secao-exclusao {
+  margin-top: 24px;
 }
 
 h1 {
