@@ -36,7 +36,7 @@ if (btnExcluir) {
         const alunoSelecionado = alunos.find(a => a.matricula === matriculaSelecionada);
 
         if (!alunoSelecionado) {
-            exibirMensagemExclusao('Aluno selecionado nÃ£o foi encontrado.', 'erro-msg');
+            exibirMensagemExclusao('Aluno selecionado não foi encontrado.', 'erro-msg');
             preencherSelect();
             return;
         }
